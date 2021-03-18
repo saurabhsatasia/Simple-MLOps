@@ -1,13 +1,11 @@
 action: GLOB, msg: packaging
 cwd: D:\Strive\Simple-MLOps
-cmd: 'c:\users\saurabh\anaconda3\envs\mlops\python.exe' setup.py sdist --formats=zip --dist-dir 'D:\Strive\Simple-MLOps\.tox\dist'
+cmd: 'c:\users\saurabh\anaconda3\envs\mlops\python.exe' setup.py sdist --formats=zip --dist-dir '.tox\dist'
 running sdist
 running egg_info
-creating src.egg-info
 writing src.egg-info\PKG-INFO
 writing dependency_links to src.egg-info\dependency_links.txt
 writing top-level names to src.egg-info\top_level.txt
-writing manifest file 'src.egg-info\SOURCES.txt'
 reading manifest file 'src.egg-info\SOURCES.txt'
 writing manifest file 'src.egg-info\SOURCES.txt'
 warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
@@ -36,8 +34,7 @@ copying tests\__init__.py -> src-0.0.1\tests
 copying tests\conftest.py -> src-0.0.1\tests
 copying tests\test_config.py -> src-0.0.1\tests
 Writing src-0.0.1\setup.cfg
-creating D:\Strive\Simple-MLOps\.tox\dist
-creating 'D:\Strive\Simple-MLOps\.tox\dist\src-0.0.1.zip' and adding 'src-0.0.1' to it
+creating '.tox\dist\src-0.0.1.zip' and adding 'src-0.0.1' to it
 adding 'src-0.0.1'
 adding 'src-0.0.1\src'
 adding 'src-0.0.1\src.egg-info'
