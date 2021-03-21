@@ -1,12 +1,12 @@
 create env 
 
 ```bash
-conda create -n wineq python=3.7 -y
+conda create -n ml_ops python=3.7 -y
 ```
 
 activate env
 ```bash
-conda activate wineq
+conda activate ml_ops
 ```
 
 created a req file

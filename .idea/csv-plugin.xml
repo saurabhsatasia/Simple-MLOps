@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\prediction_service\schema_in.json">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\src\get_data.py">
           <value>
             <Attribute>
