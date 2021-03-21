@@ -41,7 +41,7 @@ def predict(data):
         return "Unexpected Result"
 
 
-def get_schema(schema_path = schema_path):
+def get_schema(schema_path=schema_path):
     with open(schema_path) as json_file:
         schema = json.load(json_file)
     return schema
@@ -54,7 +54,7 @@ def validate_input(dict_request):
         if col not in actual_cols:
             raise NotInCols
 
-    def _validate_values(col,val):
+    def _validate_values(col, val):
         schema = get_schema()
         if not (schema[col]["min"] <= float(dict_request[col]) <= schema[col["max"]]):
             raise NotInRange
@@ -78,8 +78,8 @@ def api_response(dict_request):
         if validate_input(dict_request):
             data = np.array([list(dict_request.values())])
             response = predict(data)
-            response = {"response":response}
+            response = {"response": response}
             return response
-    except  Exception as e:
-        response = {"the_expected_range": get_schema(), "response":str(e)}
+    except Exception as e:
+        response = {"the_expected_range": get_schema(), "response": str(e)}
         return response
