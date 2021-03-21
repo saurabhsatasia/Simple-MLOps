@@ -9,9 +9,9 @@ from prediction_service import prediction
 webapp_root ="webapp"
 
 static_dir = os.path.join(webapp_root,"static")
-templeate_dir = os.path.join(webapp_root,"templates")
+template_dir = os.path.join(webapp_root,"templates")
 
-app = Flask(__name__, static_folder=static_dir, template_folder=templeate_dir)
+app = Flask(__name__, static_folder=static_dir, template_folder=template_dir)
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -19,16 +19,16 @@ def index():
     if request.method == "POST":
         try:
             if request.form:
-                data_req = dict(request.form).values()
+                data_req = dict(request.form)
                 # data = [list(map(float, data))]
-                response = prediction.form_responce(data_req)
+                response = prediction.form_response(data_req)
                 return render_template("index.html", response=response)
             elif request.json:
                 response = prediction.api_response(request.json)
                 return jsonify(response)
         except Exception as e:
             print(e)
-            # error={"Error": "Something went wrong!!"}
+            error={"error": e}
             return render_template("404.html", error=error)
     else:
         return render_template("index.html")
